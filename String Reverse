@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Strings {
+     
+    public static void reverse(StringBuilder str){
+        char temp;
+        int k=str.length()-1;
+        for(int i=0;i< str.length()/2;i++){  
+            temp=str.charAt(i);
+            str.setCharAt(i, str.charAt(k));
+            str.setCharAt(k, temp);
+            k=k-1;
+        }
+        System.out.println(str);   
+    }
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string:");
+        StringBuilder str = new StringBuilder(sc.nextLine()); 
+        System.out.println("You have entered: " + str);
+        sc.close();
+        reverse(str);
+        //palindrome(str);
+        //palindrome_recursive(str,0,str.length()-1);
+    }
+}
