@@ -1,0 +1,30 @@
+
+public class Stringque {
+    public static void checkRotation(int j,StringBuilder str,StringBuilder str2){
+        System.out.println(str+" "+str2);
+        int length= str.length();
+        if(str.compareTo(str2)==0){
+            System.out.println("String 1 is rotation of other string");
+            return;
+        }
+        else if(j==length-1){
+            System.out.println("String 1 is not rotation of other string");
+            return;
+        }
+        else{
+            char temp;
+            temp=str.charAt(str.length()-1);
+            for(int i=(str.length()-2);i>=0;i--){
+                str.setCharAt(i+1, str.charAt(i));
+            }
+            str.setCharAt(0, temp);
+            checkRotation(j+1, str, str2);
+        }
+    }
+    public static void main(String[] args) {
+        StringBuilder str = new StringBuilder("Sakshi");
+        StringBuilder str2 = new StringBuilder("kshiSa");
+        checkRotation(0, str, str2);
+    }
+}
+ 
