@@ -1,0 +1,14 @@
+
+public class Stringque {
+    public static void main(String[] args) {
+        StringBuilder str = new StringBuilder("Sakshi");
+        char temp;
+        temp=str.charAt(str.length()-1);
+        System.out.println(str);
+        for(int i=(str.length()-2);i>=0;i--){
+            str.setCharAt(i+1, str.charAt(i));
+        }
+        str.setCharAt(0, temp);
+        System.out.println(str);
+    }
+}
