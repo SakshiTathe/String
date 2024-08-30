@@ -1,0 +1,27 @@
+
+import java.util.StringTokenizer;
+import java.util.Scanner;
+
+public class Stringque{
+    public static void main(String[] args) {
+        String str="I am Sakshi and sankalp";
+        String sentence = "Hello, welcome to Java programming!";
+        System.out.println(str);
+        
+        String[] words = str.split("\\s+");
+        for (String word : words) {
+            System.out.println(word);
+        }
+        
+         StringTokenizer tokenizer = new StringTokenizer(sentence);
+        while (tokenizer.hasMoreTokens()) {
+            System.out.println(tokenizer.nextToken());
+        }
+        
+        Scanner scanner = new Scanner(sentence);
+        while (scanner.hasNext()) {
+            System.out.println(scanner.next());
+        }
+         
+    }
+}
