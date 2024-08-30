@@ -1,0 +1,10 @@
+public class Stringque{
+    public static void main(String[] args) {
+        String sentence = "Hello, welcome to Java programming!";
+        
+        String[] words = sentence.split("\\s+");
+        for (String word : words) {
+            System.out.println(word.charAt(0));
+        }
+    }
+}
