@@ -1,0 +1,30 @@
+
+public class basic {
+    public static boolean palindrome(StringBuilder str){
+        boolean flag=true;
+        int k=str.length();
+        for(int i=0;i<=k/2;i++){
+            if(str.charAt(i)!=str.charAt(k-1-i)){
+                flag=false;
+                break;
+            }
+        }
+        if (flag) return true;
+        else return false;
+    }
+    public static void main(String[] args) {
+        String text = new String("9999900000");
+        int countt=0;
+        for(int i=0;i<text.length();i++){
+            for(int l=i;l<text.length();l++){
+                StringBuilder subsquence=new StringBuilder();
+                for(int j=i;j<=l;j++){
+                    subsquence.append(text.charAt(j));
+                }
+                boolean count=palindrome(subsquence);
+                if(count) countt++;
+            }
+        }
+        System.out.println(countt);
+    }
+}
