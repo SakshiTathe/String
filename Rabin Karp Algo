@@ -1,0 +1,25 @@
+public class basic {
+    public static void main(String[] args) {
+        String text = "AABAACAADAABAABA", pat = "AABA";
+        int n=text.length(),n1=pat.length();
+        int k=0,index=0;
+        while(k<n-1){
+            if(pat.charAt(0)==text.charAt(k)){
+                boolean flag=true;
+                int j=0,i=k;
+                index=i;
+                while (j<n1) {
+                    if(pat.charAt(j)!=text.charAt(i)){
+                        flag=false;
+                        break;
+                    }
+                    i++; 
+                    j++;
+                }
+                if(flag){System.out.println("Pattern found at index "+index);}
+                k++;
+            }
+            else k++;
+        }
+    }
+}
