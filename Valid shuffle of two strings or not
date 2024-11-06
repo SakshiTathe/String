@@ -1,0 +1,32 @@
+public class basic {
+    public static void main(String[] args) {
+        String str1 = "ABC", str2 = "ZYS", shuffle = "YBAZSC";
+        int n=shuffle.length(),n1=str1.length(),n2=str2.length();
+        boolean flag=true;
+        if(n<(n1+n2)){
+            System.out.println("NO");
+        }else{
+            HashMap<Character, Integer> freq = new HashMap<>();
+            for(int i=0;i<n1;i++){
+                freq.put(str1.charAt(i),freq.getOrDefault(str1.charAt(i), 0)+ 1);
+            }
+            for(int i=0;i<n1;i++){
+                freq.put(str2.charAt(i),freq.getOrDefault(str1.charAt(i), 0)+ 1);
+            }
+            for (int i = 0; i < n; i++) {
+                if (freq.containsKey(shuffle.charAt(i))) {
+                    freq.put(shuffle.charAt(i),
+                        freq.get(shuffle.charAt(i)) - 1);
+                }
+                else {
+                    flag=false;
+                    System.out.println("NO");
+                    break;
+                }
+            }
+        }
+        if(flag){
+            System.out.println("YES");
+        }
+    }
+}
